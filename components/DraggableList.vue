@@ -1,6 +1,6 @@
 <template>
   <draggable v-model="items">
-    <div v-for="(item, index) in items" :key="index" class="item">{{ item }}</div>
+    <div v-for="(item, index) in tasks" :key="index" class="item">{{ item }}</div>
   </draggable>
 </template>
 
@@ -8,9 +8,11 @@
 import draggable from 'vuedraggable';
 
 export default {
+
   components: {
     draggable,
   },
+  props:['tasks'],
   data() {
     return {
       items: ['Item 1', 'Item 2', 'Item 3'],
